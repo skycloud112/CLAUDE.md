@@ -6,10 +6,7 @@ Create single unified LoadingGuard checking ALL async loading states.
 
 - ✅ Consolidate all checks: `sessionStatus === 'loading' || mapsStatus !== 'LOADED'`
 - ✅ Single loading UI, not nested guards
-- ✅ Location: `components/LoadingGuard.tsx` (sensorry-ai), `admin/components/LoadingGuard.tsx` (rogerapps-turbo)
 - ❌ Don't create separate guards per resource
-
-**See:** `components/LoadingGuard.tsx` (sensorry-ai) or `admin/components/LoadingGuard.tsx` (rogerapps-turbo)
 
 ## Provider Architecture
 
@@ -48,37 +45,6 @@ Order matters - outer to inner:
 
 Extract session data into focused custom hooks.
 
-- ✅ Location: `auth/useSessionAccess.ts` (root, NOT admin/ in rogerapps-turbo)
+- ✅ Location: `auth/useSessionAccess.ts`
 - ✅ Return only relevant fields (not entire session)
 - ✅ Assumes LoadingGuard ensures session loaded
-- ✅ Use nullish coalescing (`??`) defensively
-
-**IMPORTANT:** All auth code in `auth/` at root
-
-**File locations (both projects):**
-- ✅ `auth/useSessionAccess.ts` (root)
-- ✅ `auth/LoginUseCase/`, `auth/MiddlewareUseCase/` (root)
-- ✅ `auth/auth.ts` (NextAuth config)
-- ❌ NOT `admin/auth/`, NOT `utils/`
-
-**Example:**
-```typescript
-// auth/useSessionAccess.ts
-export const useSessionAccess = () => {
-  const { data: session } = useSession();
-  return {
-    hasLocationAccess: session?.hasLocationAccess ?? false,
-    hasPolygonAccess: session?.hasPolygonAccess ?? false,
-  };
-};
-```
-
-## Access Control Component Pattern
-
-Extract conditional rendering based on permissions into separate components.
-
-- ✅ Component uses `useSessionAccess()` internally
-- ✅ Parent passes callbacks, not permissions
-- ❌ Don't mix access control in parent
-
-**Testing:** Test all permission combinations

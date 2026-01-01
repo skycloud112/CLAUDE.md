@@ -16,8 +16,8 @@ Login via UUID in URL parameter. Auth.js is a thin framework layer, business log
 
 ## File Organization
 
-- `gateways/SessionGateway.ts` - SessionData interface (single source of truth)
-- `gateways/SessionGatewayImpl.ts` - NextAuth integration
+- `gateways/SessionGateway/SessionGateway.ts` - SessionData interface (single source of truth)
+- `gateways/SessionGateway/SessionGatewayImpl.ts` - NextAuth integration
 - `auth/LoginUseCase/LoginUseCase.ts` - Business logic, creates SessionData
 - `auth/auth.ts` - NextAuth config (mechanical data transfer only)
 - `auth/next-auth.d.ts` - Type augmentation
@@ -28,10 +28,10 @@ Login via UUID in URL parameter. Auth.js is a thin framework layer, business log
 ### Single Source of Truth
 
 ```typescript
-// gateways/SessionGateway.ts
 export interface SessionData {
   id: string;
   guid: string;
+  // ...other fields
 }
 ```
 
@@ -39,7 +39,11 @@ export interface SessionData {
 
 **1. LoginUseCase creates SessionData**:
 ```typescript
-const sessionData: SessionData = { id: guid, guid };
+const sessionData: SessionData = {
+  id: guid,
+  guid,
+  // ...other fields from user entity
+};
 await this.sessionGateway.createSession(sessionData);
 ```
 
@@ -65,6 +69,7 @@ async jwt({ token, user }) {
   if (user) {
     token.id = user.id;
     token.guid = user.guid;
+    // ...copy all SessionData fields to token
   }
   return token;
 }
@@ -73,8 +78,9 @@ async jwt({ token, user }) {
 **5. Session callback exposes fields at root**:
 ```typescript
 async session({ session, token }) {
-  if (token.id) session.id = token.id;
-  if (token.guid) session.guid = token.guid;
+  if (token.id) session.id = token.id as string;
+  if (token.guid) session.guid = token.guid as string;
+  // ...copy all fields from token to session (with type casts)
   return session;
 }
 ```
@@ -90,22 +96,16 @@ if (session) {
 ## Type Augmentation
 
 ```typescript
-// auth/next-auth.d.ts
+type OptionalSessionData = {
+  [K in keyof SessionData]?: SessionData[K];
+};
+
 declare module 'next-auth' {
-  interface User {
-    id: SessionData['id'];
-    guid: SessionData['guid'];
-  }
-  interface Session extends DefaultSession {
-    id: SessionData['id'];
-    guid: SessionData['guid'];
-  }
+  interface User extends SessionData {}
+  interface Session extends DefaultSession, SessionData {}
 }
 declare module 'next-auth/jwt' {
-  interface JWT {
-    id?: SessionData['id'];
-    guid?: SessionData['guid'];
-  }
+  interface JWT extends OptionalSessionData {}
 }
 ```
 
