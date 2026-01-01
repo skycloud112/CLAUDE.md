@@ -12,6 +12,7 @@
 - when I ask you to apply a pattern, apply it to all relevant places
 - when I ask you to refactor a variable to become instance variable, use the new field directly in all methods of the class insead of passing it as a parameter
 - when I ask you to implement something in a react component, see if you can add the calculation in the use case class and let react component renders
+- when have test failure, do not care if it is related to your current changes; just fix it.
 
 @docs/directInclude/coding-style.md
 @docs/directInclude/react-components.md

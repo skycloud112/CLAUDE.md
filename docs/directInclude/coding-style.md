@@ -18,9 +18,11 @@
 - functions should be pure
 
 ## Entity File Export Rules
-
 - Internal type files (e.g., `types/JobEvent.ts`) should only export their own types, not re-export types from sibling files
 - Only the master entity file (e.g., `JobEvents.ts`) should re-export types for external and tests usage
+
+## Classes
+- should provide generic methods; not special methods
 
 ## Type Safety
 - Type function parameters, return values, and variables

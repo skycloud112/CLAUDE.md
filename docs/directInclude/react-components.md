@@ -25,16 +25,23 @@
 ## Folder Structure
 - If component has sub components, create a folder for it
 - Folder name should match component name
-- Sub components are in "components" folder
+- Sub components directly used by the main component in the folder are in "components" folder
+- files used by multiple sub components of the main component should in the "shared" folder
 - Example:
   ```
-  MyComponent/
-    MyComponent.tsx
+  MainComponent/
+    MainComponent.tsx (main component)
     utils/
-      utilA.ts - directly used by MyComponent
-      utilB.tsx - directly used by MyComponent
+    shared/
+      files used by both sub components of Tab1 and Tab2
+    Tabs (or other sub domains)/
+      Tab1.tsx
+      Tab2.tsx
     components/
-      SubA.tsx - directly used by MyComponent
+      utilA.ts - directly used by MainComponent
+      utilB.tsx - directly used by MainComponent
+      SubA.tsx - directly used by MainComponent
+      SubB.tsx - directly used by MainComponent
   ```
 
 ## Dialog
