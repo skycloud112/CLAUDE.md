@@ -26,9 +26,4 @@
 - When working on humble component testing, refer to docs/referenceWhenNeed/humble-component-testing.md
 - When working on UUID URL param authentication, refer to docs/referenceWhenNeed/auth-uuid.md
 - When working on username/password authentication, refer to docs/referenceWhenNeed/auth-credentials.md
-- When working on database queries or migrations, refer to docs/referenceWhenNeed/db.md
 - When working on loading guards or providers, refer to docs/referenceWhenNeed/loading-guards.md
-- When working on Next.js pages or self-contained components, refer to docs/referenceWhenNeed/nextjs-component-patterns.md
-- When working on gateway or SQL testing, refer to docs/referenceWhenNeed/testing.md
-- When troubleshooting code patterns or tooling, refer to docs/referenceWhenNeed/code-patterns.md
-- When configuring WebStorm, refer to docs/referenceWhenNeed/webstorm.md
