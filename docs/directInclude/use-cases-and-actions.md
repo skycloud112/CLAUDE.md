@@ -27,9 +27,9 @@
 - useQuery wrapper should return data with default value (`ids: data?.ids || []`), error, isLoading
 
 ## tests
-
 - testing should be done at use case public interface level, not internal private methods level or internal helpers level.
 - if functionalities is already covered in entity tests, in use case tests, just test the integration.
+- For delete/update operations: verify state changes, NOT method calls
 
 # Entities
 - should provide generic methods; not special methods

@@ -15,7 +15,6 @@
 - always use undefined, not use null
 - do not write comments unless instructed. code should be self-explanatory.
 - remove unused imports, variables, functions, types
-- functions should be pure
 
 ## Type Safety
 - Type function parameters, return values, and variables
@@ -23,6 +22,7 @@
 - Use existing types over creating new types
 
 ## Function or Method Design
+- functions should be pure
 - Prefer object parameters over individual params list
 - Make functions `async`. Do not use `Promise.resolve`
 - Avoid passing null or undefined to functions
@@ -35,7 +35,7 @@
 
 ## Export Style
 - Do not do `export {A}`, do `export const A = ...`
-- Don't create `index.ts` or `index.tsx` files to re-export files in a folder
+- no barrel exports: Don't create `index.ts` or `index.tsx` files to re-export files in a folder
 
 ## shared file structure
 - if a file is shared between folders or files, it is placed at the common ancestor folder

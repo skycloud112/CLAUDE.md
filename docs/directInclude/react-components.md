@@ -50,5 +50,3 @@
 ## Next.js Pages
 - Each page should have a page.tsx and a XXXPage.tsx
 - page.tsx uses XXXPage.tsx
-- page.tsx uses Next.js specific code
-- XXXPage.tsx stores pure React components
