@@ -30,3 +30,10 @@
 
 - testing should be done at use case public interface level, not internal private methods level or internal helpers level.
 - if functionalities is already covered in entity tests, in use case tests, just test the integration.
+
+# Entities
+- should provide generic methods; not special methods
+
+## Entity File Export Rules
+- Internal type files (e.g., `types/JobEvent.ts`) should only export their own types, not re-export types from sibling files
+- Only the master entity file (e.g., `JobEvents.ts`) should re-export types for external and tests usage

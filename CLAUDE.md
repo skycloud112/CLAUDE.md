@@ -1,7 +1,9 @@
-# Workflow and Commands
+# Commands
 
 - `pnpm ts` (not `pnpm ts:check`) - Run TypeScript typechecker
 - `pnpm test` - Run all tests
+
+# General Guidelines
 - Do not run build.
 - when running tests, do not use more than 1 Task tool
 - for use case tests, run all tests in \_tests folder by first using glob to find all spec files, then running with all file names in the command
@@ -14,13 +16,15 @@
 - when I ask you to implement something in a react component, see if you can add the calculation in the use case class and let react component renders
 - when have test failure, do not care if it is related to your current changes; just fix it.
 
+# Important Docs
+
 @docs/directInclude/coding-style.md
 @docs/directInclude/react-components.md
 @docs/directInclude/use-cases-and-actions.md
 @docs/directInclude/gateway-styles.md
 @docs/directInclude/testing-styles.md
 
-# additional docs
+# Reference When Need
 
 - When working on hooks tests, refer to docs/referenceWhenNeed/hooks-testing.md
 - When working on humble component testing, refer to docs/referenceWhenNeed/humble-component-testing.md
