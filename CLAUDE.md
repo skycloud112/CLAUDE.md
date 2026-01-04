@@ -15,20 +15,19 @@
 - when I ask you to refactor a variable to become instance variable, use the new field directly in all methods of the class insead of passing it as a parameter
 - when I ask you to implement something in a react component, see if you can add the calculation in the use case class and let react component renders
 - when have test failure, do not care if it is related to your current changes; just fix it.
-- whenever possible, use 2 subagents.
 
 # Important Docs
 
-@docs/directInclude/coding-style.md
-@docs/directInclude/react-components.md
-@docs/directInclude/use-cases-and-actions.md
-@docs/directInclude/gateway-styles.md
-@docs/directInclude/testing-styles.md
+@directInclude/coding-style.md
+@directInclude/react-components.md
+@directInclude/use-cases-and-actions.md
+@directInclude/gateway-styles.md
+@directInclude/testing-styles.md
 
 # Reference When Need
 
-- When working on hooks tests, refer to docs/referenceWhenNeed/hooks-testing.md
-- When working on humble component testing, refer to docs/referenceWhenNeed/humble-component-testing.md
-- When working on UUID URL param authentication, refer to docs/referenceWhenNeed/auth-uuid.md
-- When working on username/password authentication, refer to docs/referenceWhenNeed/auth-credentials.md
-- When working on loading guards or providers, refer to docs/referenceWhenNeed/loading-guards.md
+- When working on hooks tests, refer to referenceWhenNeed/hooks-testing.md
+- When working on component testing, refer to referenceWhenNeed/humble-component-testing.md
+- When working on UUID URL param authentication, refer to referenceWhenNeed/auth-uuid.md
+- When working on username/password authentication, refer to referenceWhenNeed/auth-credentials.md
+- When working on loading guards or providers, refer to referenceWhenNeed/loading-guards.md
