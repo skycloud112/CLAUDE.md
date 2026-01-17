@@ -2,6 +2,7 @@
 
 - `pnpm ts` (not `pnpm ts:check`) - Run TypeScript typechecker
 - `pnpm test` - Run all tests
+- use `pnpm`, not `npm`
 
 # General Guidelines
 - Do not run build.
@@ -15,6 +16,8 @@
 - when I ask you to refactor a variable to become instance variable, use the new field directly in all methods of the class insead of passing it as a parameter
 - when I ask you to implement something in a react component, see if you can add the calculation in the use case class and let react component renders
 - when have test failure, do not care if it is related to your current changes; just fix it.
+- Always use Context7 MCP when I need library/API documentation, code generation, setup or configuration steps without me having to explicitly ask.
+- try to reuse existing classes or code. do not duplicate logic to another place.
 
 # Important Docs
 

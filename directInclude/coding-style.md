@@ -15,6 +15,7 @@
 - always use undefined, not use null
 - do not write comments unless instructed. code should be self-explanatory.
 - remove unused imports, variables, functions, types
+- prefer do null check early in code path, code in later path just assume value exist
 
 ## Type Safety
 - Type function parameters, return values, and variables

@@ -27,11 +27,11 @@
 - Folder name should match component name
 - Sub components directly used by the main component in the folder are in "components" folder
 - files used by multiple sub components of the main component should in the "shared" folder
+- if a sub component has a main component file and util files, group them in a new folder
 - Example:
   ```
   MainComponent/
     MainComponent.tsx (main component)
-    utils/
     shared/
       files used by both sub components of Tab1 and Tab2
     Tabs (or other sub domains)/

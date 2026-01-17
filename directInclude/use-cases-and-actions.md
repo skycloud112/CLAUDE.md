@@ -11,6 +11,8 @@
 - all use cases, entities, gateway methods (real impl), UI pure function utils should have tests. 
 - Dependency order: UI → actions → use case → entity. Reverse is not allowed
 - prefer private methods over standalone functions
+- prefer use entities for intermediate calculation and only convert to dto at last step
+- prefer to use instance variables to pass params to between methods
 
 ## File Naming
 - Folder: `XXXUseCase/`
