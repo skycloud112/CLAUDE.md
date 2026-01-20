@@ -21,6 +21,7 @@
 - Type function parameters, return values, and variables
 - Prefer compile-time type checking over runtime checks
 - Use existing types over creating new types
+- instead of using "typeof", try to find the original type definition and use that
 
 ## Function or Method Design
 - functions should be pure
@@ -28,6 +29,7 @@
 - Make functions `async`. Do not use `Promise.resolve`
 - Avoid passing null or undefined to functions
 - name of params of function or props of component should be at the level of abstraction of the function or component
+- params should not be Set, should be string[]. inside method, can convert to Set for perf.
 
 ## Step-Down Rule
 - Caller should be declared above callee in a source file

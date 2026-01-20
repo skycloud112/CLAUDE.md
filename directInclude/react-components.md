@@ -10,6 +10,7 @@
   - `<Box>` instead of `<div>`
   - prefer Stack over Box if flex container is needed
 - Extend existing components with optional parameters - don't create wrapper/variant components. Add optional params: `onCreateSuccess?: (id: string) => void`
+- follow step down rule - utils should be put below components that use them
 
 ## Event Handlers
 - Handlers or callbacks in components should be pure functions (with tests) that have hard-to-mock dependencies (such as useMutation callback and state, event value) passed to it

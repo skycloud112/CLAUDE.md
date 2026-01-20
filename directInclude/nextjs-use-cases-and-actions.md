@@ -1,5 +1,9 @@
 # Use Cases and Actions
 
+## behavior
+- when move logic from a use case class to a service class, move tests to the service class and just test integration at the use case class
+- when implementing logic in use case that duplicates with another use case, refactor the shared logic to a service class. make sure use cases only test integration.
+
 ## Request/Response
 - Should be DTOs, or plain objects and primitives only (no `Date` objects, no Entity objects)
 
@@ -13,6 +17,7 @@
 - prefer private methods over standalone functions
 - prefer use entities for intermediate calculation and only convert to dto at last step
 - prefer to use instance variables to pass params to between methods
+
 
 ## File Naming
 - Folder: `XXXUseCase/`

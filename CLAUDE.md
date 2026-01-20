@@ -23,7 +23,7 @@
 
 @directInclude/coding-style.md
 @directInclude/react-components.md
-@directInclude/use-cases-and-actions.md
+@directInclude/nextjs-use-cases-and-actions.md
 @directInclude/gateway-styles.md
 @directInclude/testing-styles.md
 
